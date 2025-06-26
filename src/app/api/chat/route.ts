@@ -52,7 +52,7 @@ ${memoContent}
             temperature: 0.7,
         });
 
-        return result.toAIStreamResponse({
+        return result.toDataStreamResponse({
             headers: corsHeaders(),
         });
     } catch (error) {
