@@ -1,8 +1,14 @@
 // src/app/api/chat/route.ts
 import OpenAI from 'openai';
 import { streamText } from 'ai';
-import { openai as openaiProvider } from '@ai-sdk/openai';
+import { createOpenAI } from '@ai-sdk/openai';
 import { NextResponse } from 'next/server';
+
+// 创建 DeepSeek 提供者
+const deepseek = createOpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+    baseURL: 'https://api.deepseek.com/v1',
+});
 
 // 如果上面的导入有问题，使用下面这种方式
 // import { openai } from 'ai/providers/openai';
@@ -47,7 +53,7 @@ ${memoContent}
         }
 
         const result = await streamText({
-            model: openaiProvider('gpt-4o-mini'),
+            model: deepseek('deepseek-chat'),
             messages: processedMessages,
             temperature: 0.7,
         });

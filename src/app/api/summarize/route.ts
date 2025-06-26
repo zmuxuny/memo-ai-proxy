@@ -4,6 +4,7 @@ import { NextResponse } from 'next/server';
 
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
+    baseURL: 'https://api.deepseek.com',
 });
 
 export const runtime = 'edge';
@@ -39,7 +40,7 @@ export async function POST(req: Request) {
         }
 
         const response = await openai.chat.completions.create({
-            model: 'gpt-4o-mini',
+            model: 'deepseek-chat',
             messages: [
                 {
                     role: 'system',
