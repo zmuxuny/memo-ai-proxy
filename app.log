@@ -1,0 +1,13 @@
+
+> memo-ai-proxy@0.1.0 start
+> next start
+
+   ▲ Next.js 15.3.4
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.0.247:3000
+
+ ✓ Starting...
+ ⚠ "next start" does not work with "output: standalone" configuration. Use "node .next/standalone/server.js" instead.
+ ✓ Ready in 415ms
+[Error: aborted] { code: 'ECONNRESET' }
+ ⨯ uncaughtException:  [Error: aborted] { code: 'ECONNRESET' }
